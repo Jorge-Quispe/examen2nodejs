@@ -22,8 +22,8 @@ export const readMatricula = async(req, res)=>{
 
 export const delMatricula = async(req, res)=>{
     try {
-        const id = parseInt(req.params.id);
-        const response = await pool.query('delete from matricula where idmatricula = $1', [id]);
+        const idd = parseInt(req.params.id);
+        const response = await pool.query('delete from matricula where idmatricula = $1', [idd]);
         return res.status(200).json(
             `matricula ${ id } eliminado correctamente...!` //alt 96
         );
