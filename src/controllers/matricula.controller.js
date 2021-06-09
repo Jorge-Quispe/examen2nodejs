@@ -35,9 +35,9 @@ export const delMatricula = async(req, res)=>{
 
 export const updateMatricula = async(req, res)=>{
     try {
-        const idproducto = parseInt(req.params.id);
+        const idproductos = parseInt(req.params.id);
         const{ fecha, ciclo} = req.body;
-        await pool.query('update matricula set fecha = $1, ciclo = $2 where idproducto = $3', [fecha, ciclo, idproducto]);
+        await pool.query('update matricula set fecha = $1, ciclo = $2 where idproducto = $3', [fecha, ciclo, idproductos]);
         return res.status(200).json(
             `matricula modificada correctamente...!` //alt 96
         );
